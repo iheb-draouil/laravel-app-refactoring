@@ -28,12 +28,11 @@ class BaseExternalService
         ->map(fn($e) => $e->getPrefix())
         ->unique()
         ->count();
-
-        if ($unique_prefixes < $adapters->count())
-        {
+        
+        if ($unique_prefixes < $adapters->count()) {
             throw new Exception('Some of the supplied system adapters share the same prefix');
         }
-
+        
         $this->external_system_adapters = $adapters;
     }
 

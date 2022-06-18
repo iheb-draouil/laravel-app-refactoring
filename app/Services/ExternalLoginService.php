@@ -22,17 +22,15 @@ class ExternalLoginService extends BaseExternalService
 
         preg_match("/^($system_prefixes_union)_.*/", $login, $matches);
 
-        if (count($matches) == 0)
-        {
+        if (count($matches) == 0) {
             return new ServiceFailureResponse();
         }
 
         foreach ($system_adapters as $adapter)
         {
-            if ($adapter->getPrefix() == $matches[1])
-            {
-                if ($adapter->handleLogin($login, $password))
-                {
+            if ($adapter->getPrefix() == $matches[1]) {
+                
+                if ($adapter->handleLogin($login, $password)) {
                     return new ServiceSuccessResponse($adapter->getPrefix());
                 }
 
