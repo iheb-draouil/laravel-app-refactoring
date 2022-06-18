@@ -30,8 +30,7 @@ class AuthController extends Controller
         
         $result = $this->external_login_handler->verifyCredentials($login, $password);
 
-        if ($result instanceof ServiceSuccessResponse)
-        {
+        if ($result instanceof ServiceSuccessResponse) {
             $jwt = JWT::encode([
                 'login' => $login,
                 'system' => $result->getData(),

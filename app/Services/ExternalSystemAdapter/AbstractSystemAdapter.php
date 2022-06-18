@@ -13,14 +13,12 @@ abstract class AbstractSystemAdapter
 
     public function getPrefix(): string
     {
-        if (!$this->prefix)
-        {
-            throw new Exception("System adapters must set the 'prefix' field.");
+        if ($this->prefix === null) {
+            throw new Exception("A system adapter must set the 'prefix' field.");
         }
 
-        if ($this->prefix == '')
-        {
-            throw new Exception("A system adapter prefix cannot be an empty string.");
+        if ($this->prefix == '') {
+            throw new Exception("A system adapter 'prefix' field cannot be an empty string.");
         }
 
         return $this->prefix;

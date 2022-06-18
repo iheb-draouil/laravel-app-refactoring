@@ -31,8 +31,8 @@ class ExternalResourcesService extends BaseExternalService
 
     private function requestResource(Closure $service_call, string $service_token)
     {
-        for ($i = 0; $i < $this->max_attempt_count; $i++) {
-            
+        for ($i = 0; $i < $this->max_attempt_count; $i++)
+        {
             try {
                 $result = $service_call();
                 Cache::put($service_token, $result, 900);
@@ -40,7 +40,6 @@ class ExternalResourcesService extends BaseExternalService
             }
 
             catch (Exception) { }
-
         }
 
         if (Cache::has($service_token)) {
@@ -61,8 +60,7 @@ class ExternalResourcesService extends BaseExternalService
                 $adapter->getPrefix(),
             );
 
-            if ($request_result instanceof ServiceFailureResponse)
-            {
+            if ($request_result instanceof ServiceFailureResponse) {
                 return $request_result;
             }
 

@@ -26,8 +26,7 @@ class ResourcesController extends Controller
     {
         $result = $this->resource_service->getTitles();
 
-        if ($result instanceof ServiceSuccessResponse)
-        {
+        if ($result instanceof ServiceSuccessResponse) {
             return response()->json($result->getData());
         }
 

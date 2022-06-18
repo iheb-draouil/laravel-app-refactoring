@@ -16,7 +16,7 @@ There are 3 external systems that your application must communicate with. Each o
 
 You're allowed to modify the structure and the content of files within the project but make sure the content of the "External" directory in the project root is intact.
 
-The directory contains services that act as third party services with which your app communicates but may not modify in any way.
+The directory contains services that act as third party services with which your app communicates with but may not modify in any way.
 
 Your task is to expose a REST API that offers these two functionalities:
 - Authentication: It must be done a way that users from all the systems can authenticate with your app using their respective system's credentials.

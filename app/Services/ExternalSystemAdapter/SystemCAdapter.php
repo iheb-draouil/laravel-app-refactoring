@@ -20,8 +20,7 @@ class SystemCAdapter extends AbstractSystemAdapter
     {
         $result = $this->auth_service->auth($login, $password);
         
-        if ($result instanceof Success)
-        {
+        if ($result instanceof Success) {
             return true;
         }
 
